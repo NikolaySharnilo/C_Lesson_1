@@ -77,7 +77,7 @@ Console.WriteLine("Максимальное число: " + max);
 
 // Задача 5: Напишите программу, которая на вход принимает число и выдаёт, является ли число чётным (делится ли оно на два без остатка).
 
-
+/*
 Console.Write("Введите целое число: ");
 int number = int.Parse(Console.ReadLine());
 
@@ -89,4 +89,21 @@ else
 {
     Console.WriteLine("Число не четное");
 }
+*/
 
+
+// Задача 6: Напишите программу, которая на вход принимает число (N), а на выходе показывает все чётные числа от 1 до N.
+
+
+Console.Write("Введите целое число: ");
+int number = int.Parse(Console.ReadLine());
+int count = 1;
+while (count <= number)
+{
+    if ((count % 2) == 0)
+    {
+        Console.Write($"{count} ");
+    }
+    count++;
+}
+Console.WriteLine(); //Нужно что бы консоль в конце перешла на новую строку
