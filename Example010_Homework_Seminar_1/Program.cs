@@ -49,7 +49,7 @@ else
 
 // Задача 4: Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел.
 
-
+/*
 Console.Write("Введите первое число: ");
 double numberA = double.Parse(Console.ReadLine());
 
@@ -72,3 +72,21 @@ if (max < numberC)
 }
 
 Console.WriteLine("Максимальное число: " + max);
+*/
+
+
+// Задача 5: Напишите программу, которая на вход принимает число и выдаёт, является ли число чётным (делится ли оно на два без остатка).
+
+
+Console.Write("Введите целое число: ");
+int number = int.Parse(Console.ReadLine());
+
+if ((number % 2) == 0)
+{
+    Console.WriteLine("Число четное");
+}
+else
+{
+    Console.WriteLine("Число не четное");
+}
+
