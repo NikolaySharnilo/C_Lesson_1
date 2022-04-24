@@ -29,7 +29,7 @@ else
 
 // Задача 3: Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
 
-
+/*
 Console.Write("Введите первое число: ");
 double numberA = double.Parse(Console.ReadLine());
 
@@ -44,3 +44,31 @@ else
 {
     Console.WriteLine("max = " + numberB);
 }
+*/
+
+
+// Задача 4: Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел.
+
+
+Console.Write("Введите первое число: ");
+double numberA = double.Parse(Console.ReadLine());
+
+Console.Write("Введите второе число: ");
+double numberB = double.Parse(Console.ReadLine());
+
+Console.Write("Введите третье число: ");
+double numberC = double.Parse(Console.ReadLine());
+
+double max = numberA;
+
+if (max < numberB)
+{
+    max = numberB;
+}
+
+if (max < numberC)
+{
+    max = numberC;
+}
+
+Console.WriteLine("Максимальное число: " + max);
