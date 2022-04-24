@@ -26,7 +26,7 @@ else
 */
 
 //Программа для вывода названия дня недели по введенному номеру
-
+/*
 Console.Write("Введите число для определения дня недели: ");
 int number = int.Parse(Console.ReadLine());
 
@@ -62,3 +62,11 @@ else
 {
     Console.WriteLine("Введите корректное число");
 }
+*/
+
+//Напишите программу вычисления фукнции
+
+Console.Write("Введите число для расчета фукнции: ");
+int number = int.Parse(Console.ReadLine());
+int result = number*number + number - 1;
+Console.WriteLine(result);
