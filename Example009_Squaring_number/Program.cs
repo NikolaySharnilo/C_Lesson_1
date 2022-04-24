@@ -76,23 +76,13 @@ Console.WriteLine(result);
 //а на выходе показывает все целые числа в промежутке от -N до N
 
 Console.Write("Введите число для расчета фукнции: ");
-int numberA = int.Parse(Console.ReadLine());
-string result = "";
-int numberV = 0;
-if (numberA > 0)
-{
-    numberV = numberA;
-    numberA = -numberA;
-}
-else
-{
-    numberV = -numberA;
-}
+int numberA = Math.Abs(int.Parse(Console.ReadLine()));
+int numberV  = -Math.Abs(numberA);
 
-while (numberA <= numberV)
+while (numberV <= numberA)
 {
-    result += ($"{numberA} ");
-    numberA++;
+    Console.Write ($"{numberV} ");
+    numberV++;
 }
-Console.WriteLine(result);
+Console.WriteLine();
 
