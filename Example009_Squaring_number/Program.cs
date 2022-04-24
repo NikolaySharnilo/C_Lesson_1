@@ -1,4 +1,4 @@
-﻿//ПРограмма для возмедения в квадрат
+﻿//Задча 0: ПРограмма для возмедения в квадрат
 /*
 Console.Write("Введите целое число: ");
 int number = int.Parse(Console.ReadLine());
@@ -8,7 +8,7 @@ int result = number * number;
 Console.WriteLine(result);
 */
 
-//Программа, которая принимает два числа и проверяет, является ли первое число квадратом второго
+//Задача 1: Программа, которая принимает два числа и проверяет, является ли первое число квадратом второго
 /*
 Console.Write("Введите первое целое число: ");
 int numberA = int.Parse(Console.ReadLine());
@@ -25,7 +25,7 @@ else
 }
 */
 
-//Программа для вывода названия дня недели по введенному номеру
+//Задача 2: Программа для вывода названия дня недели по введенному номеру
 /*
 Console.Write("Введите число для определения дня недели: ");
 int number = int.Parse(Console.ReadLine());
@@ -64,9 +64,35 @@ else
 }
 */
 
-//Напишите программу вычисления фукнции
-
+//Задача 3: Напишите программу вычисления фукнции
+/*
 Console.Write("Введите число для расчета фукнции: ");
 int number = int.Parse(Console.ReadLine());
-int result = number*number + number - 1;
+int result = number * number + number - 1;
 Console.WriteLine(result);
+*/
+
+//Задача 4: Напишите программу, которая на вход принимает одно число (N), 
+//а на выходе показывает все целые числа в промежутке от -N до N
+
+Console.Write("Введите число для расчета фукнции: ");
+int numberA = int.Parse(Console.ReadLine());
+string result = "";
+int numberV = 0;
+if (numberA > 0)
+{
+    numberV = numberA;
+    numberA = -numberA;
+}
+else
+{
+    numberV = -numberA;
+}
+
+while (numberA <= numberV)
+{
+    result += ($"{numberA} ");
+    numberA++;
+}
+Console.WriteLine(result);
+
