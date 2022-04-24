@@ -13,7 +13,7 @@ Console.WriteLine("Введенное число по модулю: " + number);
 //Задача 2: Напишите программу, которая на вход принимает значение, а на выходе показывает обратное значение.
 // 1 -> 1   2 -> 0.5     0.25 -> 4
 
-
+/*
 Console.Write("Введите число не равное 0: ");
 double number = double.Parse(Console.ReadLine());
 if (number != 0)
@@ -24,6 +24,23 @@ else
 {
     Console.WriteLine("Введите число не равное 0");
 }
+*/
 
 
+// Задача 3: Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
 
+
+Console.Write("Введите первое число: ");
+double numberA = double.Parse(Console.ReadLine());
+
+Console.Write("Введите второе число: ");
+double numberB = double.Parse(Console.ReadLine());
+
+if (numberA >= numberB)
+{
+    Console.WriteLine("max = " + numberA);
+}
+else
+{
+    Console.WriteLine("max = " + numberB);
+}
