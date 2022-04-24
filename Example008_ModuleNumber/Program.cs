@@ -3,4 +3,4 @@ int number = Convert.ToInt32(Console.ReadLine());
 
 int result = Math.Abs(number);
 
-Console.WriteLine(result);
+Console.WriteLine("Введенное число по модулю: " + result);
