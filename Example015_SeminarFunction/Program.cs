@@ -52,5 +52,17 @@ void FindDivisible (int number1, int number2)
     }
 }
 
-FindDivisible(NumberRead(), NumberRead());
+//FindDivisible(NumberRead(), NumberRead());
 
+void CheckDivisibleDoubleNumber(int number)
+{
+    if ((number % 7 == 0) & (number % 23 == 0))
+    {
+        Console.WriteLine("Yes");
+    }
+    else
+    {
+        Console.WriteLine("No");
+    }
+}
+CheckDivisibleDoubleNumber(NumberRead());
