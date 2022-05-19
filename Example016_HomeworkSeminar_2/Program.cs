@@ -50,5 +50,27 @@ void OutputThirdNumber(int number)
     }
 
 }
-int a = NumberRead("Введите число:");
-OutputThirdNumber(a);
+
+//int a = NumberRead("Введите число:");
+//OutputThirdNumber(a);
+
+void DayOfWeek(int number)
+{
+    if (number > 0 & number < 8)
+    {
+        if (number == 6 || number == 7)
+        {
+            Console.WriteLine("Да");
+        }
+        else
+        {
+            Console.WriteLine("Нет");
+        }
+    }
+   else
+   {
+       Console.WriteLine($"Введенное число {number} не соответствует ни одному дню недели");
+   }
+}
+
+DayOfWeek(NumberRead("Введите число:"));
