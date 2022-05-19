@@ -26,7 +26,29 @@ int RandomNumber(int number1, int number2)
 
 void delSecondNumber(int number)
 {
-    Console.WriteLine($"{ number / 100}{ number % 10}");
+    Console.WriteLine($"{number / 100}{number % 10}");
 }
-delSecondNumber(RandomNumber(100,1000));
 
+//delSecondNumber(RandomNumber(100,1000));
+
+void OutputThirdNumber(int number)
+{
+    int length = number.ToString().Length;
+
+    if (length > 2)
+    {
+        while (length > 3)
+        {
+            number /= 10;
+            length = number.ToString().Length;
+        }
+        Console.WriteLine(number % 10);
+    }
+    else
+    {
+        Console.WriteLine($"Число {number} не содержит третьей цифры");
+    }
+
+}
+int a = NumberRead("Введите число:");
+OutputThirdNumber(a);
