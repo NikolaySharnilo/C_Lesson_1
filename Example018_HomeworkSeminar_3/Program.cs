@@ -32,6 +32,35 @@ void CheckNumberPalindrome(int num)
 
 double FindDistance3D(int x1, int y1, int z1, int x2, int y2, int z2)
 {
-    return Math.Round(Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2) + Math.Pow(z2 - z1, 2)),2);
+    return Math.Round(Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2) + Math.Pow(z2 - z1, 2)), 2);
 }
-Console.WriteLine(FindDistance3D(7,-5,0,1,-1,9));
+//Console.WriteLine(FindDistance3D(7,-5,0,1,-1,9));
+
+// Task 3: Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+
+void CubNumberToN(int n)
+{
+    if (n > 0)
+    {
+        int i = 0;
+        Console.Write($"Cub 1 to {n} -> ");
+        string txt = ",";
+        while (i < n)
+        {
+            if (i + 1 == n)
+            {
+                txt = "";
+            }
+
+            Console.Write($"{Math.Pow(i + 1, 3)}{txt} ");
+            i++;
+        }
+        Console.WriteLine();
+    }
+    else
+    {
+        Console.WriteLine("Введите число больше 0");
+    }
+    
+}
+CubNumberToN(5);
