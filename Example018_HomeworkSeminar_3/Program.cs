@@ -25,4 +25,13 @@ void CheckNumberPalindrome(int num)
     }
 }
 
-CheckNumberPalindrome(12821);
+//CheckNumberPalindrome(12821);
+
+// Task 2: Напишите программу, которая принимает на вход координаты 
+//двух точек и находит расстояние между ними в 3D пространстве.
+
+double FindDistance3D(int x1, int y1, int z1, int x2, int y2, int z2)
+{
+    return Math.Round(Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2) + Math.Pow(z2 - z1, 2)),2);
+}
+Console.WriteLine(FindDistance3D(7,-5,0,1,-1,9));
