@@ -105,7 +105,7 @@ string helloUser(int maxAttempt)
     Console.WriteLine($"Здравствуйте, {name}! Давайте сыграем в игру! "
     + $"Загадано число от 0 до 99, у вас {maxAttempt} попыток его отгадать, "
     + "программа будет подсказывать больше или меньше ваш ответ относительно загаданного числа!");
-    Console.WriteLine("Для продолжения нажмите любую клавишу");
+    Console.WriteLine("Для продолжения нажмите клавишу Enter");
     Console.ReadLine();
     Console.WriteLine();
     return name;
