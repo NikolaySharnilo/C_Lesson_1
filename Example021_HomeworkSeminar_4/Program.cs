@@ -10,5 +10,19 @@ void PowNumber(int a, int b)
     }
     Console.WriteLine(result);
 }
-PowNumber(3, 5);
-PowNumber(2, 4);
+/* PowNumber(3, 5);
+PowNumber(2, 4); */
+
+void SumNumbers(int num)
+{
+    int result = 0;
+    while (num > 0)
+    {
+        result += num % 10;
+        num /= 10;
+    }
+    Console.WriteLine(result);
+}
+SumNumbers(452);
+SumNumbers(82);
+SumNumbers(9012);
