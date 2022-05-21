@@ -52,4 +52,90 @@ void PrintArray(int[] arr)
     Console.WriteLine();
 }
 
-PrintArray(NewArrayRandom(8));
+//PrintArray(NewArrayRandom(8));
+
+// Добровольная задача: игра в угадайку
+
+int RandomNumber()
+{
+    return new Random().Next(0, 100);
+}
+
+void compareAnswer(int answer, int userAnswer)
+{
+    if (answer == userAnswer)
+    {
+        Console.WriteLine($"Поздравляю, вы победили! Ваш ответ {userAnswer} верный!");
+        Console.WriteLine();
+        Environment.Exit(0);
+
+    }
+    else if (answer < userAnswer)
+    {
+        Console.WriteLine($"Введенное число {userAnswer} больше загаданного!");
+    }
+    else
+    {
+        Console.WriteLine($"Введенное число {userAnswer} меньше загаданного!");
+    }
+}
+
+int ReadUserAnswer(string msg)
+{
+    Console.Write($"{msg} ");
+
+    string text = Console.ReadLine();
+
+    if ((text.Any(char.IsLetter) == false) & (text.Length < 3))
+    {
+        return int.Parse(text);
+    }
+    else
+    {
+        return -1;
+    }
+
+}
+
+string helloUser(int maxAttempt)
+{
+    Console.Write("Привет, это игра в угадайку! Представтесь, пожалуйста: ");
+    string name = Console.ReadLine();
+    
+    Console.WriteLine($"Здравствуйте, {name}! Давайте сыграем в игру! "
+    + $"Загадано число от 0 до 99, у вас {maxAttempt} попыток его отгадать, "
+    + "программа будет подсказывать больше или меньше ваш ответ относительно загаданного числа!");
+    Console.WriteLine("Для продолжения нажмите любую клавишу");
+    Console.ReadLine();
+    Console.WriteLine();
+    return name;
+}
+
+void startGame()
+{
+    int maxAttempt = 7;
+    int answer = RandomNumber();
+    
+    string name = helloUser(maxAttempt);
+    Console.WriteLine(answer);
+    for (int attempt = 1; attempt <= maxAttempt; attempt++)
+    {
+        int userAnswer = -1;
+        while (userAnswer == -1)
+        {
+            userAnswer = ReadUserAnswer($"Попытка {attempt} из {maxAttempt}. Введите число от 0 до 99:");
+        }
+        compareAnswer(answer, userAnswer);
+        Console.WriteLine();
+    }
+    Console.WriteLine($"Вы исчерпали все попытки, загаданное число: {answer}.");
+}
+
+startGame();
+
+
+
+
+
+
+
