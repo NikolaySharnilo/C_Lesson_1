@@ -117,7 +117,7 @@ void startGame()
     int answer = RandomNumber();
     
     string name = helloUser(maxAttempt);
-    Console.WriteLine(answer);
+    //Console.WriteLine(answer);
     for (int attempt = 1; attempt <= maxAttempt; attempt++)
     {
         int userAnswer = -1;
