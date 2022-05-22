@@ -84,6 +84,28 @@ void sumOddNumber()
     }
     Console.WriteLine(result);
 }
-sumOddNumber(); // Написал так что бы работало как в примере, но были сомнения т.к. по идеи массив начинается с индекса 0, 
+//sumOddNumber(); // Написал так что бы работало как в примере, но были сомнения т.к. по идеи массив начинается с индекса 0, 
 //а он, если верить wiki, четный. Наверное тут нужно было бы задать уточняющий вопрос.
 
+//Task 3: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+
+void differenceMinOfMax()
+{
+    int[] arr = NewArrayRandom(10, 1, 100);
+    PrintArray(arr);
+    int min, max;
+    min = max = arr[0];
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i] < i)
+        {
+            min = arr[i];
+        }
+        if (arr[i] > max)
+        {
+            max = arr[i];
+        }
+    }
+    Console.WriteLine($"Max = {max}; Min = {min}; Difference = {max - min}");
+}
+differenceMinOfMax();
