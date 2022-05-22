@@ -42,11 +42,30 @@ void MultiplayPair()
         indexOut++;
         index_2--;
     }
-    
+
     if ((array.Length % 2) != 0)
     {
-        outArr[size - 1] = array[size-1];
+        outArr[size - 1] = array[size - 1];
     }
     PrintArray(outArr);
 }
-MultiplayPair();
+//MultiplayPair();
+
+//Task 1: Задайте массив заполненный случайными положительными трёхзначными числами. 
+//Напишите программу, которая покажет количество чётных чисел в массиве.
+
+void checkEvenNumber()
+{
+    int[] arr = NewArrayRandom(10, 100, 1000);
+    PrintArray(arr);
+    int result = 0;
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i] % 2 == 0)
+        {
+            result ++;
+        }
+    }
+    Console.WriteLine(result);
+}
+checkEvenNumber();
