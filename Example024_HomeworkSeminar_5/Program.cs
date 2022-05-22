@@ -63,9 +63,27 @@ void checkEvenNumber()
     {
         if (arr[i] % 2 == 0)
         {
-            result ++;
+            result++;
         }
     }
     Console.WriteLine(result);
 }
-checkEvenNumber();
+//checkEvenNumber();
+
+// Task 2: Задайте одномерный массив, заполненный случайными числами. 
+//Найдите сумму элементов, стоящих на нечётных позициях.
+
+void sumOddNumber()
+{
+    int[] arr = NewArrayRandom(10, -10, 10);
+    PrintArray(arr);
+    int result = 0;
+    for (int i = 0; i < arr.Length; i += 2)
+    {
+        result += arr[i];
+    }
+    Console.WriteLine(result);
+}
+sumOddNumber(); // Написал так что бы работало как в примере, но были сомнения т.к. по идеи массив начинается с индекса 0, 
+//а он, если верить wiki, четный. Наверное тут нужно было бы задать уточняющий вопрос.
+
