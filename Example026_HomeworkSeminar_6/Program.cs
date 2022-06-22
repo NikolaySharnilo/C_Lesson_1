@@ -5,13 +5,13 @@
     {
         for (int j = 0; j < countC; j++)
         {
-           arr[i,j] = new Random().Next(min, max); 
+            arr[i, j] = new Random().Next(min, max);
         }
     }
     return arr;
 }
 
-void PrintArray(int [,] arr)
+void PrintArray(int[,] arr)
 {
     for (int i = 0; i < arr.GetLength(0); i++)
     {
@@ -35,12 +35,28 @@ void copyArray()
 
     for (int i = 0; i < sizeR; i++)
     {
-        for (int j=0; j< sizeC; j++)
+        for (int j = 0; j < sizeC; j++)
         {
-            newArray[i,j] = array[i,j];
+            newArray[i, j] = array[i, j];
         }
-        
+
     }
     PrintArray(newArray);
 }
-copyArray();
+//copyArray();
+
+// Task 1: Пользователь вводит с клавиатуры М чисел. Посчитайте, сколько чисел больше 0 ввел пользователь
+void FindNumber()
+{
+    Console.WriteLine ("Введите числа через запятую без пробелов");
+    string text = Console.ReadLine();
+    string[] txt = text.Split(",");
+    int size = txt.Length;
+    int count = 0;
+    for(int i = 0; i < size; i++)
+    {
+        if (int.Parse(txt[i])>0) count++;
+    }
+    Console.WriteLine ($"Count positive number = {count}");
+}
+FindNumber();
