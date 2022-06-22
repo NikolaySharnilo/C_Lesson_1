@@ -48,15 +48,48 @@ void copyArray()
 // Task 1: Пользователь вводит с клавиатуры М чисел. Посчитайте, сколько чисел больше 0 ввел пользователь
 void FindNumber()
 {
-    Console.WriteLine ("Введите числа через запятую без пробелов");
+    Console.WriteLine("Введите числа через запятую без пробелов");
     string text = Console.ReadLine();
     string[] txt = text.Split(",");
     int size = txt.Length;
     int count = 0;
-    for(int i = 0; i < size; i++)
+    for (int i = 0; i < size; i++)
     {
-        if (int.Parse(txt[i])>0) count++;
+        if (int.Parse(txt[i]) > 0) count++;
     }
-    Console.WriteLine ($"Count positive number = {count}");
+    Console.WriteLine($"Count positive number = {count}");
 }
-FindNumber();
+//FindNumber();
+
+//Task 2: Найти точку пересечения прямых заданных уровнением
+// у= к1 * x + b1; y = k2 * x + b2; 
+// значения b1, k1, b2, k2 задаются пользователем
+
+string findPointToLines()
+{
+    Console.WriteLine("Введите числа b1, k1, b2, k2 через запятую без пробелов");
+    string text = Console.ReadLine();
+    string[] txt = text.Split(",");
+
+    double b1 = double.Parse(txt[0]);
+    double k1 = double.Parse(txt[1]);
+    double b2 = double.Parse(txt[2]);
+    double k2 = double.Parse(txt[3]);
+
+    if (b1 == b2 && k1 == k2)
+    {
+        return ("Прямые совпадают");
+    }
+
+    if ((b1 - b2 == 0) || (k2 - k1 == 0))
+    {
+        return ("Прямые не пересекаются");
+    }
+
+    double x = ((b1 - b2) / (k2 - k1));
+    double y = (k1 * x + b1);
+
+    return ($"Точка пересечения прямых {x}, {y}");
+
+}
+Console.WriteLine(findPointToLines());
