@@ -11,7 +11,7 @@
     return arr;
 }
 
-void PrintArray(int [,] arr)
+void PrintArray(int[,] arr)
 {
     for (int i = 0; i < arr.GetLength(0); i++)
     {
@@ -23,7 +23,7 @@ void PrintArray(int [,] arr)
     }
 }
 
-void PrintArrayDouble(double [,] arr)
+void PrintArrayDouble(double[,] arr)
 {
     for (int i = 0; i < arr.GetLength(0); i++)
     {
@@ -59,11 +59,26 @@ double[,] NewArrayRandomDoble(int countR, int countC, int min, int max)
     for (int i = 0; i < countR; i++)
     {
         for (int j = 0; j < countC; j++)
-            arr[i, j] = Math.Round(new Random().NextDouble() + new Random().Next(min, max-1), 2);
+            arr[i, j] = Math.Round(new Random().NextDouble() + new Random().Next(min, max - 1), 2);
     }
     return arr;
 
 
 
 }
-PrintArrayDouble(NewArrayRandomDoble(3, 4, -10, 10));
+//PrintArrayDouble(NewArrayRandomDoble(3, 4, -10, 10));
+
+// Task 2: Напишите программу, которая на вход принимает позиции элемента в двумерном массиве,
+// и возвращает значение этого элемента или же указание, чо такого элемента нет
+string findNumberToArray(int i, int j)
+{
+    int[,] arr = NewArrayRandom(4, 4, 1, 10);
+    PrintArray(arr);
+
+    if (arr.GetLength(0)>= i-1 && arr.GetLength(1)>= j-1)
+        return $"Число на позиции ({i}, {j}) -> {arr[i-1,j-1]} ";
+    else
+        return $"({i}, {j}) -> такого числа нет в массиве";
+}
+
+Console.WriteLine(findNumberToArray(3,3));
