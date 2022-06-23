@@ -75,10 +75,31 @@ string findNumberToArray(int i, int j)
     int[,] arr = NewArrayRandom(4, 4, 1, 10);
     PrintArray(arr);
 
-    if (arr.GetLength(0)>= i-1 && arr.GetLength(1)>= j-1)
-        return $"Число на позиции ({i}, {j}) -> {arr[i-1,j-1]} ";
+    if (arr.GetLength(0) >= i - 1 && arr.GetLength(1) >= j - 1)
+        return $"Число на позиции ({i}, {j}) -> {arr[i - 1, j - 1]} ";
     else
         return $"({i}, {j}) -> такого числа нет в массиве";
 }
 
-Console.WriteLine(findNumberToArray(3,3));
+//Console.WriteLine(findNumberToArray(3,3));
+
+//Task 3: Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце
+void findMidNumber()
+{
+    int[,] arr = NewArrayRandom(4, 4, 1, 10);
+    PrintArray(arr);
+
+    string txt = "Среднее арифметическое каждого столбца: ";
+    double count = arr.GetLength(0);
+    for (int j = 0; j < arr.GetLength(1); j++)
+    {
+        double mid = 0;
+        for (int i = 0; i < count; i++)
+            mid += arr[i, j];
+
+        txt = $"{txt} {mid / count};";
+    }
+    Console.WriteLine(txt);
+}
+
+findMidNumber();
