@@ -23,4 +23,33 @@ void PrintArray(int[,] arr)
     }
 }
 
+//Task 0: Составить частотный словарь по массиву
+void DictionaryArray()
+{
 
+    int[,] arr = NewArrayRandom(3, 3, 0, 10);
+    PrintArray(arr);
+
+    var dict = new Dictionary<int, int>();
+
+    foreach (var item in arr)
+    {
+        if (dict.ContainsKey(item) == false)
+            dict.Add(item, 1);
+        else
+            dict[item]++;
+    }
+
+    int min = dict[0];
+    int max = dict[0];
+    foreach (var item in dict)
+    {
+        if (min > item.Key) min = item.Key;
+        if (max < item.Key) max = item.Key;
+    }
+
+    for (int i = min; i < max; i++)
+        if (dict.ContainsKey(i) == true) Console.WriteLine($"{i} всречается {dict[i]} раз(а)");
+}
+
+DictionaryArray();
