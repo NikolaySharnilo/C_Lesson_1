@@ -148,7 +148,7 @@ void findMinSumInArray()
     int minKey = 0;
     foreach (var item in dict)
     {
-        if (minValue > item.Value) 
+        if (minValue > item.Value)
         {
             minValue = item.Value;
             minKey = item.Key;
@@ -157,4 +157,29 @@ void findMinSumInArray()
     Console.WriteLine($"Наименьшая сумма элементов в строке {minKey + 1} -> {minValue}");
 
 }
-findMinSumInArray();
+//findMinSumInArray();
+
+
+//Task 3: Задайте 2 матрицы. Напишите программу, которая будет находить произведение двух матриц
+void multiplayArray()
+{
+    int row = 3;
+    int column = 4;
+    int[,] arr1 = NewArrayRandom(row, column, 0, 10);
+    PrintArray(arr1);
+
+    int[,] arr2 = NewArrayRandom(row, column, 0, 10);
+    Console.WriteLine();
+    PrintArray(arr2);
+
+    int[,] arrMult = new int[row, column];
+
+    for (int i = 0; i < arr1.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr1.GetLength(1); j++)
+            arrMult[i, j] = arr1[i, j] * arr2[i, j];
+    }
+    Console.WriteLine();
+    PrintArray(arrMult);
+}
+multiplayArray();
