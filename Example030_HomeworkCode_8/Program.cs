@@ -119,7 +119,7 @@ int[,] quikSortRowArrayDown(int[,] arr, int row, int leftIndex, int rightIndex)
 
 }
 
-int[,] arr = NewArrayRandom(3, 8, 0, 10);
+/*int[,] arr = NewArrayRandom(3, 8, 0, 10);
 PrintArray(arr);
 
 for (int i = 0; i < arr.GetLength(0); i++)
@@ -127,4 +127,34 @@ for (int i = 0; i < arr.GetLength(0); i++)
 
 Console.WriteLine();
 PrintArray(arr);
+*/
 
+//Task 2: Задайте прямоугольный двумерный массив напишите программу, 
+//которая будет находить строку с наименьшей суммой элементов
+void findMinSumInArray()
+{
+    int[,] arr = NewArrayRandom(6, 3, 0, 10);
+    PrintArray(arr);
+
+    var dict = new Dictionary<int, int>();
+
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        dict.Add(i, 0);
+        for (int j = 0; j < arr.GetLength(1); j++)
+            dict[i] += arr[i, j];
+    }
+    int minValue = dict[0];
+    int minKey = 0;
+    foreach (var item in dict)
+    {
+        if (minValue > item.Value) 
+        {
+            minValue = item.Value;
+            minKey = item.Key;
+        }
+    }
+    Console.WriteLine($"Наименьшая сумма элементов в строке {minKey + 1} -> {minValue}");
+
+}
+findMinSumInArray();
