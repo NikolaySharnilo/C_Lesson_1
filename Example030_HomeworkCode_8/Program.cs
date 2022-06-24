@@ -52,4 +52,79 @@ void DictionaryArray()
         if (dict.ContainsKey(i) == true) Console.WriteLine($"{i} всречается {dict[i]} раз(а)");
 }
 
-DictionaryArray();
+//DictionaryArray();
+
+//Task 1: Задайте двумерный массив. Напишите программу, 
+//которая упорядочит по убыванию элементы каждой строки двумерного массива
+
+int[,] quikSortRowArrayUp(int[,] arr, int row, int leftIndex, int rightIndex)
+{
+    int i = leftIndex;
+    int j = rightIndex;
+    int pivot = arr[row, leftIndex];
+
+    while (i <= j)
+    {
+        while (arr[row, i] < pivot)
+            i++;
+
+        while (arr[row, j] > pivot)
+            j--;
+
+        if (i <= j)
+        {
+            (arr[row, i], arr[row, j]) = (arr[row, j], arr[row, i]);
+            i++;
+            j--;
+        }
+    }
+    if (leftIndex < j)
+        quikSortRowArrayUp(arr, row, leftIndex, j);
+
+    if (rightIndex > i)
+        quikSortRowArrayUp(arr, row, i, rightIndex);
+
+    return arr;
+
+}
+
+int[,] quikSortRowArrayDown(int[,] arr, int row, int leftIndex, int rightIndex)
+{
+    int i = leftIndex;
+    int j = rightIndex;
+    int pivot = arr[row, leftIndex];
+
+    while (i <= j)
+    {
+        while (arr[row, i] > pivot)
+            i++;
+
+        while (arr[row, j] < pivot)
+            j--;
+
+        if (i <= j)
+        {
+            (arr[row, i], arr[row, j]) = (arr[row, j], arr[row, i]);
+            i++;
+            j--;
+        }
+    }
+    if (leftIndex < j)
+        quikSortRowArrayDown(arr, row, leftIndex, j);
+
+    if (rightIndex > i)
+        quikSortRowArrayDown(arr, row, i, rightIndex);
+
+    return arr;
+
+}
+
+int[,] arr = NewArrayRandom(3, 8, 0, 10);
+PrintArray(arr);
+
+for (int i = 0; i < arr.GetLength(0); i++)
+    arr = quikSortRowArrayDown(arr, i, 0, arr.GetLength(1) - 1);
+
+Console.WriteLine();
+PrintArray(arr);
+
